@@ -4,6 +4,7 @@ import { NavBar } from 'app/components/NavBar';
 import { Masthead } from './Masthead';
 import { Features } from './Features';
 import { PageWrapper } from 'app/components/PageWrapper';
+import { ThemeSwitch } from './Features/ThemeSwitch';
 
 export function HomePage() {
   return (
@@ -18,7 +19,7 @@ export function HomePage() {
       <NavBar />
       <PageWrapper>
         <Masthead />
-        <Features />
+        <ThemeSwitch />
       </PageWrapper>
     </>
   );
