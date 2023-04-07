@@ -16,7 +16,6 @@ export function HomePage() {
           content="A React Boilerplate application homepage"
         />
       </Helmet>
-      <NavBar />
       <PageWrapper>
         <Masthead />
         <ThemeSwitch />
