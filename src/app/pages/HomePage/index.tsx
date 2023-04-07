@@ -1,10 +1,7 @@
-import * as React from 'react';
-import { Helmet } from 'react-helmet-async';
-import { NavBar } from 'app/components/NavBar';
-import { Masthead } from './Masthead';
-import { Features } from './Features';
+import { Typography } from '@mui/material';
 import { PageWrapper } from 'app/components/PageWrapper';
-import { ThemeSwitch } from './Features/ThemeSwitch';
+import { Helmet } from 'react-helmet-async';
+import { Masthead } from './Masthead';
 
 export function HomePage() {
   return (
@@ -18,7 +15,6 @@ export function HomePage() {
       </Helmet>
       <PageWrapper>
         <Masthead />
-        <ThemeSwitch />
       </PageWrapper>
     </>
   );
