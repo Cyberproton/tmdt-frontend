@@ -1,43 +1,59 @@
-import * as React from 'react';
-import styled from 'styled-components/macro';
-import { Logo } from './Logo';
-import { StyleConstants } from 'styles/StyleConstants';
-import { Nav } from './Nav';
-import { PageWrapper } from '../PageWrapper';
+import { More, PersonRounded, ShoppingBagRounded } from '@mui/icons-material';
+import { AppBar, Badge, Box, IconButton, Toolbar } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import { NavigationButton, NavigationIconButton } from '../NavigationButton';
+import { DevisLogo } from './DevisLogo';
+import { SearchBar } from './SearchBar';
 
 export function NavBar() {
+  const navigate = useNavigate();
+
   return (
-    <Wrapper>
-      <PageWrapper>
-        <Logo />
-        <Nav />
-      </PageWrapper>
-    </Wrapper>
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static" color="transparent">
+        <Toolbar>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            sx={{ mr: 2 }}
+            onClick={() => navigate('/')}
+          >
+            <DevisLogo />
+          </IconButton>
+          <SearchBar />
+          <Box sx={{ flexGrow: 1 }} />
+          <Box
+            sx={{
+              display: { xs: 'none', md: 'flex' },
+              justifyContent: 'center',
+            }}
+          >
+            <NavigationButton path="/">Trang Chủ</NavigationButton>
+            <NavigationButton path="/products">Sản phẩm</NavigationButton>
+            <NavigationButton path="/design">Thiết kế áo</NavigationButton>
+            <NavigationIconButton path="/cart">
+              <Badge badgeContent={4} color="error">
+                <ShoppingBagRounded fontSize="large" />
+              </Badge>
+            </NavigationIconButton>
+            <NavigationIconButton path="/user">
+              <PersonRounded fontSize="large" />
+            </NavigationIconButton>
+          </Box>
+          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              aria-label="show more"
+              aria-haspopup="true"
+              color="inherit"
+            >
+              <More />
+            </IconButton>
+          </Box>
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
 }
-
-const Wrapper = styled.header`
-  box-shadow: 0 1px 0 0 ${p => p.theme.borderLight};
-  height: ${StyleConstants.NAV_BAR_HEIGHT};
-  display: flex;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: ${p => p.theme.background};
-  z-index: 2;
-
-  @supports (backdrop-filter: blur(10px)) {
-    backdrop-filter: blur(10px);
-    background-color: ${p =>
-      p.theme.background.replace(
-        /rgba?(\(\s*\d+\s*,\s*\d+\s*,\s*\d+)(?:\s*,.+?)?\)/,
-        'rgba$1,0.75)',
-      )};
-  }
-
-  ${PageWrapper} {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-`;

@@ -1,10 +1,5 @@
-import * as React from 'react';
+import { Typography } from '@mui/material';
 import { Helmet } from 'react-helmet-async';
-import { NavBar } from 'app/components/NavBar';
-import { Masthead } from './Masthead';
-import { Features } from './Features';
-import { PageWrapper } from 'app/components/PageWrapper';
-import { ThemeSwitch } from './Features/ThemeSwitch';
 
 export function HomePage() {
   return (
@@ -16,11 +11,7 @@ export function HomePage() {
           content="A React Boilerplate application homepage"
         />
       </Helmet>
-      <NavBar />
-      <PageWrapper>
-        <Masthead />
-        <ThemeSwitch />
-      </PageWrapper>
+      <Typography variant="h3">Home Page</Typography>
     </>
   );
 }

@@ -6,15 +6,19 @@
  * contain code that should be seen on all pages. (e.g. navigation bar)
  */
 
-import * as React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { GlobalStyle } from 'styles/global-styles';
 
+import { useTranslation } from 'react-i18next';
+import { NavBar } from './components/NavBar';
+import { CartPage } from './pages/CartPage';
+import { DesignPage } from './pages/DesignPage';
 import { HomePage } from './pages/HomePage/Loadable';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
-import { useTranslation } from 'react-i18next';
+import { ProductPage } from './pages/ProductPage';
+import { UserPage } from './pages/UserPage';
 
 export function App() {
   const { i18n } = useTranslation();
@@ -27,9 +31,13 @@ export function App() {
       >
         <meta name="description" content="A React Boilerplate application" />
       </Helmet>
-
+      <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/products" element={<ProductPage />} />
+        <Route path="/design" element={<DesignPage />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/user" element={<UserPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <GlobalStyle />
