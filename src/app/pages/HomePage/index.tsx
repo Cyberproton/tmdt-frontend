@@ -1,17 +1,32 @@
-import { Typography } from '@mui/material';
-import { Helmet } from 'react-helmet-async';
+import { Box, Container } from '@mui/material';
+import {
+  BrandList,
+  ContactUs,
+  DesignCard,
+  HomeBreadcrumbs,
+  IntroductionCard,
+} from './components';
 
 export function HomePage() {
   return (
-    <>
-      <Helmet>
-        <title>Home Page</title>
-        <meta
-          name="description"
-          content="A React Boilerplate application homepage"
-        />
-      </Helmet>
-      <Typography variant="h3">Home Page</Typography>
-    </>
+    <Container>
+      <Box my={3}>
+        <Box mt={3} mb={6}>
+          <HomeBreadcrumbs />
+        </Box>
+        <Box my={6}>
+          <IntroductionCard />
+        </Box>
+        <Box my={16}>
+          <BrandList />
+        </Box>
+        <Box my={16}>
+          <DesignCard />
+        </Box>
+        <Box my={16}>
+          <ContactUs />
+        </Box>
+      </Box>
+    </Container>
   );
 }

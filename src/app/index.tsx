@@ -15,7 +15,7 @@ import { useTranslation } from 'react-i18next';
 import { NavBar } from './components/NavBar';
 import { CartPage } from './pages/CartPage';
 import { DesignPage } from './pages/DesignPage';
-import { HomePage } from './pages/HomePage/Loadable';
+import { HomePage } from './pages/HomePage';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
 import { ProductDetailPage } from './pages/ProductDetailPage';
 import { ProductPage } from './pages/ProductPage';
