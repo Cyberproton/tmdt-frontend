@@ -1,5 +1,5 @@
 import { Box, Grid } from '@mui/material';
-import { Product } from '../data';
+import { Product } from '../../../../data';
 import { ProductCard, ProductCardProps } from './ProductCard';
 
 export const ProductCardGroup = (props: ProductCardGroupProps) => {
