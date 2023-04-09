@@ -17,6 +17,7 @@ import { CartPage } from './pages/CartPage';
 import { DesignPage } from './pages/DesignPage';
 import { HomePage } from './pages/HomePage/Loadable';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
+import { ProductDetailPage } from './pages/ProductDetailPage';
 import { ProductPage } from './pages/ProductPage';
 import { UserPage } from './pages/UserPage';
 
@@ -35,6 +36,7 @@ export function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/products" element={<ProductPage />} />
+        <Route path="/product/:id" element={<ProductDetailPage />} />
         <Route path="/design" element={<DesignPage />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/user" element={<UserPage />} />

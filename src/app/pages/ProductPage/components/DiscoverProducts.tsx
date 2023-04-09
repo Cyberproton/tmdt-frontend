@@ -1,7 +1,7 @@
 import { NavigateNext } from '@mui/icons-material';
 import { Box, Typography } from '@mui/material';
 import { ProductCardGroup } from '.';
-import { discoverProductData } from '../data';
+import { discoverProductData } from '../../../../data';
 
 export const DiscoverProducts = props => {
   return (

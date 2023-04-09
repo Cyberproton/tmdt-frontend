@@ -1,6 +1,6 @@
 import { NavigateNext } from '@mui/icons-material';
 import { Box, Typography } from '@mui/material';
-import { popularProductData } from '../data';
+import { popularProductData } from '../../../../data';
 import { ProductCardGroup } from './ProductCardGroup';
 
 export const PopularProducts = props => {

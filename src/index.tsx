@@ -8,10 +8,10 @@
 import 'react-app-polyfill/ie11';
 import 'react-app-polyfill/stable';
 
+import FontFaceObserver from 'fontfaceobserver';
 import * as React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
-import FontFaceObserver from 'fontfaceobserver';
 
 // Use consistent styling
 import 'sanitize.css/sanitize.css';
