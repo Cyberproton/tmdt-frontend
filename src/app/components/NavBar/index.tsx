@@ -46,7 +46,7 @@ export function NavBar() {
                 <ShoppingBagRounded fontSize="large" />
               </Badge>
             </NavigationIconButton>
-            <NavigationIconButton path="/user">
+            <NavigationIconButton path="/general">
               <PersonRounded fontSize="large" />
             </NavigationIconButton>
           </Box>
