@@ -1,5 +1,12 @@
 import { More, PersonRounded, ShoppingBagRounded } from '@mui/icons-material';
-import { AppBar, Badge, Box, IconButton, Toolbar } from '@mui/material';
+import {
+  AppBar,
+  Badge,
+  Box,
+  Container,
+  IconButton,
+  Toolbar,
+} from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { NavigationButton, NavigationIconButton } from '../NavigationButton';
 import { DevisLogo } from './DevisLogo';
@@ -9,9 +16,9 @@ export function NavBar() {
   const navigate = useNavigate();
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" color="transparent">
-        <Toolbar>
+    <AppBar position="static" color="transparent">
+      <Container>
+        <Toolbar disableGutters>
           <IconButton
             size="large"
             edge="start"
@@ -28,6 +35,7 @@ export function NavBar() {
             sx={{
               display: { xs: 'none', md: 'flex' },
               justifyContent: 'center',
+              alignItems: 'center',
             }}
           >
             <NavigationButton path="/">Trang Chủ</NavigationButton>
@@ -38,7 +46,7 @@ export function NavBar() {
                 <ShoppingBagRounded fontSize="large" />
               </Badge>
             </NavigationIconButton>
-            <NavigationIconButton path="/user">
+            <NavigationIconButton path="/general">
               <PersonRounded fontSize="large" />
             </NavigationIconButton>
           </Box>
@@ -53,7 +61,7 @@ export function NavBar() {
             </IconButton>
           </Box>
         </Toolbar>
-      </AppBar>
-    </Box>
+      </Container>
+    </AppBar>
   );
 }
