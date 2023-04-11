@@ -15,12 +15,11 @@ import { useTranslation } from 'react-i18next';
 import { NavBar } from './components/NavBar';
 import { CartPage } from './pages/CartPage';
 import { DesignPage } from './pages/DesignPage';
+import { General } from './pages/General';
 import { HomePage } from './pages/HomePage';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
 import { ProductDetailPage } from './pages/ProductDetailPage';
 import { ProductPage } from './pages/ProductPage';
-import { UserPage } from './pages/UserPage';
-import { General } from './pages/General';
 
 export function App() {
   const { i18n } = useTranslation();
