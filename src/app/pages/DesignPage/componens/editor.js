@@ -7,11 +7,6 @@ import {
   Select,
   Input,
   Button,
-  TextField,
-  Form,
-  IconButton,
-  Alert,
-  AlertTitle,
 } from '@mui/material';
 import { Text } from 'react-konva';
 import ColoredRect from './Tool.js';
@@ -264,8 +259,8 @@ export default function Editor({
               label="Age"
               onChange={changeDirection}
             >
-              <MenuItem value="Back">Truớc</MenuItem>
-              <MenuItem value="front">Sau</MenuItem>
+              <MenuItem value="front">Truớc</MenuItem>
+              <MenuItem value="Back">Sau</MenuItem>
             </Select>
           </FormControl>
 
@@ -284,9 +279,7 @@ export default function Editor({
 
         <div className="mb-5">
           <div className="flex -m-3">
-            {/* <TextField id="text" label="Outlined" variant="outlined" /> */}
-
-            <FormControl fullWidth>
+            <FormControl sx={{ ml: 1.7, width: '8ch' }}>
               <InputLabel id="demo-simple-select-label">Size</InputLabel>
               <Select
                 labelId="demo-simple-select-label"
@@ -305,7 +298,7 @@ export default function Editor({
               </Select>
             </FormControl>
 
-            <FormControl fullWidth>
+            <FormControl sx={{ ml: 1.9, width: '15ch' }}>
               <InputLabel id="demo-simple-select-label">Font</InputLabel>
               <Select
                 labelId="demo-simple-select-label"
@@ -323,7 +316,7 @@ export default function Editor({
               </Select>
             </FormControl>
 
-            <FormControl fullWidth>
+            <FormControl sx={{ ml: 1.9, width: '13ch' }}>
               <InputLabel id="demo-simple-select-label">Weight</InputLabel>
               <Select
                 labelId="select-weight-id"
@@ -341,7 +334,7 @@ export default function Editor({
               </Select>
             </FormControl>
 
-            <Button variant="contained" component="label">
+            <Button variant="contained" component="label" sx={{ ml: 2 }}>
               Color
               <Input type="color" id="select-color" color="secondary"></Input>
             </Button>
@@ -385,10 +378,17 @@ export default function Editor({
           </label>
         </div>
         <div className="flex items-center justify-center">
-          <Button size="lagre" onClick={() => setDLimage(true)}>
+          <Button
+            variant="contained"
+            color="success"
+            size="lagre"
+            onClick={() => setDLimage(true)}
+          >
             Lưu thiết kế
           </Button>
-          <Button size="lagre">Thêm vào giỏ hàng</Button>
+          <Button variant="contained" sx={{ ml: 2 }} size="lagre">
+            Thêm vào giỏ hàng
+          </Button>
         </div>
       </div>
     </div>

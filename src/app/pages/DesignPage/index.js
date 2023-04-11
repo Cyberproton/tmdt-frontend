@@ -1,15 +1,30 @@
-import { Typography } from '@mui/material';
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Edit from './Edit';
-import * as serviceWorker from './serviceWorker';
 import './index.css';
+import { Box, Container } from '@mui/material';
+import { Helmet } from 'react-helmet-async';
+import { DesignBreadcrumbs } from './componens/DesignBreadcrumb';
 
-export const DesignPage = props => {
+export function DesignPage() {
   return (
-    <Typography variant="h3">
-      {' '}
-      <Edit />{' '}
-    </Typography>
+    <>
+      <Helmet>
+        <title>Thông tin</title>
+        <meta
+          name="description"
+          content="A React Boilerplate application homepage"
+        />
+      </Helmet>
+      <Container>
+        <Box my={3}>
+          <Box mt={3}>
+            <DesignBreadcrumbs />
+          </Box>
+          <Box mt={4} mb={6}>
+            <Edit />
+          </Box>
+        </Box>
+      </Container>
+    </>
   );
-};
+}
