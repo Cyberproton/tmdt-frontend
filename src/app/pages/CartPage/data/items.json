@@ -1,0 +1,84 @@
+[
+  {
+    "id": 1,
+    "name": "Summer Shirt",
+    "price": 100000,
+    "description": "Product 1 description",
+    "discount": 0.6,
+    "imgUrl": "/assets/item-big-1.png",
+    "categoryId": 1
+  },
+  {
+    "id": 2,
+    "name": "Blue Pants",
+    "price": 150000,
+    "description": "Product 1 description",
+    "discount": 0.3,
+    "imgUrl": "/asset/item-big-2.png",
+    "categoryId": 2
+  },
+  {
+    "id": 3,
+    "name": "Golden Coat",
+    "price": 500000,
+    "description": "Product 1 description",
+    "discount": 0.5,
+    "imgUrl": "/asset/item-big-3.png",
+    "categoryId": 3
+  },
+  {
+    "id": 4,
+    "name": "Snow Hoodie",
+    "price": 70000,
+    "description": "Product 1 description",
+    "discount": 0.4,
+    "imgUrl": "/asset/item-big-4.png",
+    "categoryId": 3
+  },
+
+  {
+    "id": 5,
+    "name": "Summer Shirt",
+    "price": 100000,
+    "description": "Product 1 description",
+    "discount": 0.6,
+    "imgUrl": "/asset/item-1.png",
+    "categoryId": 1
+  },
+  {
+    "id": 6,
+    "name": "Snow Hoodie",
+    "price": 20000,
+    "description": "Product 1 description",
+    "discount": 0.4,
+    "imgUrl": "/asset/item-2.png",
+    "categoryId": 3
+  },
+  {
+    "id": 7,
+    "name": "White Shirt",
+    "price": 80000,
+    "description": "Product 1 description",
+    "discount": 0.1,
+    "imgUrl": "/asset/item-3.png",
+    "categoryId": 1
+  },
+  {
+    "id": 8,
+    "name": "Thunder Hoodie",
+    "price": 100000,
+    "description": "Product 1 description",
+    "discount": 0,
+    "imgUrl": "/asset/item-4.png",
+    "categoryId": 3
+  },
+  {
+    "id": 9,
+    "name": "Crimson Coat",
+    "price": 100000,
+    "description": "Product 1 description",
+    "discount": 0.3,
+    "imgUrl": "/asset/item-5.png",
+    "categoryId": 3
+  }
+]
