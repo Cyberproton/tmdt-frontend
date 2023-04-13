@@ -7,7 +7,9 @@ import {
   Typography,
   createTheme,
 } from '@mui/material';
+import { addCartItem } from 'app/pages/CartPage/data';
 import Image from 'mui-image';
+import { useState } from 'react';
 import { ProductMainSectionProps } from '../types';
 import { ProductMainSectionName } from './ProductMainSectionName';
 import { ProductMainSectionOptions } from './ProductMainSectionOptions';
@@ -21,6 +23,10 @@ export const ProductMainSection = (props: ProductMainSectionProps) => {
   const borderRadius = '16px';
   const height = 460;
   const product = props.product;
+
+  const [selectedSize, setSelectedSize] = useState<string | undefined>();
+  const [selectedColor, setSelectColor] = useState<string | undefined>();
+  const [selectedQuantity, setSelectQuantity] = useState<number>(1);
 
   return (
     <Box
@@ -55,7 +61,15 @@ export const ProductMainSection = (props: ProductMainSectionProps) => {
             <Box mt={2} mb={2}>
               <Divider />
             </Box>
-            <ProductMainSectionOptions product={product} />
+            <ProductMainSectionOptions
+              product={product}
+              selectedQuantity={selectedQuantity}
+              setSelectedQuantity={setSelectQuantity}
+              selectedSize={selectedSize}
+              setSelectedSize={setSelectedSize}
+              selectedColor={selectedColor}
+              setSelectedColor={setSelectColor}
+            />
             <Box
               sx={{
                 display: 'flex',
@@ -71,7 +85,17 @@ export const ProductMainSection = (props: ProductMainSectionProps) => {
                 </Button>
               </ThemeProvider>
 
-              <Button variant="contained">
+              <Button
+                variant="contained"
+                onClick={() => {
+                  addCartItem({
+                    ...product,
+                    size: selectedSize || 'M',
+                    color: selectedColor || 'Vàng',
+                    quantity: selectedQuantity,
+                  });
+                }}
+              >
                 <Typography variant="subtitle1" fontWeight={'medium'}>
                   Thêm vào giỏ hàng
                 </Typography>
