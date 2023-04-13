@@ -1,10 +1,10 @@
 import {
-    Box,
-    Button,
-    Divider,
-    ThemeProvider,
-    Typography,
-    createTheme,
+  Box,
+  Button,
+  Divider,
+  ThemeProvider,
+  Typography,
+  createTheme,
 } from '@mui/material';
 import { PayPalButtons, PayPalScriptProvider } from '@paypal/react-paypal-js';
 import { clearCartItems } from 'app/pages/CartPage/data';
@@ -106,7 +106,9 @@ export const OrderSummary = (props: OrderSummaryProps) => {
           <Button
             sx={{ mt: 2 }}
             variant="contained"
-            onClick={() => navigate('/checkout')}
+            onClick={() =>
+              navigate('/checkout/done', { state: { isSuccessful: true } })
+            }
           >
             Đặt hàng
           </Button>
