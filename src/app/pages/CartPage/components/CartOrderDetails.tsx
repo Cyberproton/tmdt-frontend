@@ -13,12 +13,13 @@ const primaryBlack = createTheme({
 });
 
 export const CartOrderDetails = (props: CartOrderDetailsProps) => {
-  const price = props.cartItems.reduce(
+  const cartItems = props.cartItems;
+  const price = cartItems.reduce(
     (acc, item) =>
       acc + (item.price - item.price * item.discount) * item.quantity,
     0,
   );
-  const shippingFee = 30000;
+  const shippingFee = cartItems.length === 0 ? 0 : 30000;
   return (
     <Box
       p={4}
