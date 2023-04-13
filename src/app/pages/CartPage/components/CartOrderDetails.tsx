@@ -1,5 +1,16 @@
-import { Box, Button, Divider, Typography } from '@mui/material';
+import {
+  Box,
+  Button,
+  Divider,
+  ThemeProvider,
+  Typography,
+  createTheme,
+} from '@mui/material';
 import { CartOrderDetailsProps } from '../types';
+
+const primaryBlack = createTheme({
+  palette: { primary: { main: '#111111' } },
+});
 
 export const CartOrderDetails = (props: CartOrderDetailsProps) => {
   const price = props.cartItems.reduce(
@@ -44,9 +55,11 @@ export const CartOrderDetails = (props: CartOrderDetailsProps) => {
           {(price + shippingFee).toLocaleString()}đ
         </Typography>
       </Box>
-      <Button sx={{ mt: 2 }} variant="contained">
-        Thanh toán đơn hàng
-      </Button>
+      <ThemeProvider theme={primaryBlack}>
+        <Button sx={{ mt: 2 }} variant="contained">
+          Thanh toán đơn hàng
+        </Button>
+      </ThemeProvider>
     </Box>
   );
 };

@@ -1,20 +1,9 @@
 import { DeleteOutline } from '@mui/icons-material';
-import {
-  Box,
-  Checkbox,
-  Grid,
-  IconButton,
-  Typography,
-  createTheme,
-} from '@mui/material';
+import { Box, Checkbox, Grid, IconButton, Typography } from '@mui/material';
 import Image from 'mui-image';
 import { CartItemProps } from '../types';
 import { CartItemPrice } from './CartItemPrice';
 import { CartItemQuantity } from './CartItemQuantity';
-
-const primaryBlack = createTheme({
-  palette: { primary: { main: '#111111' } },
-});
 
 export const CartItem = (props: CartItemProps) => {
   const cartItem = props.cartItem;
