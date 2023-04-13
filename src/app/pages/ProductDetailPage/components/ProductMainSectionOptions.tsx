@@ -9,19 +9,21 @@ import {
   Typography,
   createTheme,
 } from '@mui/material';
-import { useState } from 'react';
-import { ProductMainSectionProps } from '../types';
+import { ProductMainSectionOptionsProps } from '../types';
 
 const primaryBlack = createTheme({
   palette: { primary: { main: '#111111' } },
 });
 
-export const ProductMainSectionOptions = (props: ProductMainSectionProps) => {
-  const product = props.product;
-
-  const [selectedSize, setSelectedSize] = useState<string | undefined>();
-  const [selectedColor, setSelectColor] = useState<string | undefined>();
-  const [selectedQuantity, setSelectQuantity] = useState<number>(1);
+export const ProductMainSectionOptions = (
+  props: ProductMainSectionOptionsProps,
+) => {
+  const selectedQuantity = props.selectedQuantity;
+  const selectedSize = props.selectedSize;
+  const selectedColor = props.selectedColor;
+  const setSelectedQuantity = props.setSelectedQuantity;
+  const setSelectedSize = props.setSelectedSize;
+  const setSelectedColor = props.setSelectedColor;
 
   const sizes = ['M', 'L', 'XL', 'XXL'];
   const selectedSizeReal = selectedSize ? selectedSize : sizes[0];
@@ -45,7 +47,7 @@ export const ProductMainSectionOptions = (props: ProductMainSectionProps) => {
                   if (selectedQuantity - 1 < 1) {
                     return;
                   }
-                  setSelectQuantity(selectedQuantity - 1);
+                  setSelectedQuantity(selectedQuantity - 1);
                 }}
               >
                 -
@@ -56,7 +58,7 @@ export const ProductMainSectionOptions = (props: ProductMainSectionProps) => {
                   if (selectedQuantity + 1 > 200) {
                     return;
                   }
-                  setSelectQuantity(selectedQuantity + 1);
+                  setSelectedQuantity(selectedQuantity + 1);
                 }}
               >
                 +
@@ -102,7 +104,7 @@ export const ProductMainSectionOptions = (props: ProductMainSectionProps) => {
               value={selectedColorReal}
               fullWidth
               size="small"
-              onChange={value => setSelectColor(value.target.value)}
+              onChange={value => setSelectedColor(value.target.value)}
             >
               {colors.map(e => (
                 <MenuItem value={e}>{e}</MenuItem>
