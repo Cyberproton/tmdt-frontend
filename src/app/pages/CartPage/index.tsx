@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { render } from "react-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 
@@ -8,17 +9,11 @@ const client = new QueryClient();
 const rootElement = document.getElementById("root");
 
 
-export function DesignPage() {
-return (
-        
-
+export default function DesignPage() {
+return (    
     <QueryClientProvider client={client}>
         <AppCart />
-    </QueryClientProvider>,
-    
-           
-          
-    )
-    
+    </QueryClientProvider>
+    ) 
   }
   
