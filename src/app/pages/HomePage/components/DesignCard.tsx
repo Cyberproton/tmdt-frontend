@@ -68,10 +68,8 @@ export const DesignCard = props => {
                 </Box>
 
                 <Typography color={'dimgray'}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                  Thỏa sức sáng tạo và tạo ra những sản phẩm độc đáo với công cụ
+                  thiết kế đơn giản và dễ sử dụng của chúng tôi.
                 </Typography>
               </Box>
               <Box

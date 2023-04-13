@@ -47,10 +47,12 @@ export const IntroductionCard = () => {
               </Box>
 
               <Typography color={'dimgray'}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+                Davies là lựa chọn hàng đầu dành cho các tín đồ thời trang Đường
+                phố sành điệu. Sứ mệnh của Davies là trao quyền cho thế hệ trẻ
+                toàn thế giới tự do thể hiện phong cách thông qua thời trang,
+                thương hiệu vượt qua ranh giới của thời trang đường phố bằng
+                cách không ngừng sáng tạo các trang phục với các bộ sưu tập độc
+                đáo.
               </Typography>
             </Box>
             <Box
