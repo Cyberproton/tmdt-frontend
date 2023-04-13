@@ -9,8 +9,8 @@ export const DesignBreadcrumbs = props => {
       <Link underline="hover" color="inherit" href="/">
         <Home />
       </Link>
-      <Link underline="hover" color="primary" href="/design">
-        Thiết kế
+      <Link underline="hover" color="primary" href="/cart">
+        Giỏ hàng
       </Link>
     </Breadcrumbs>
   );
