@@ -1,9 +1,3 @@
-/* eslint-disable prettier/prettier */
-import { Box, Container } from '@mui/material';
-import { Helmet } from 'react-helmet-async';
-import { DesignBreadcrumbs } from './components/DesignBreadcrumb';
-
-  
 import * as React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
@@ -37,7 +31,7 @@ function Copyright() {
 
 const steps = ['Shipping address', 'Payment details', 'Review your order'];
 
-function getStepContent(step: number) {
+function getStepContent(step) {
   switch (step) {
     case 0:
       return <AddressForm />;
@@ -113,6 +107,7 @@ export default function Checkout() {
                     Back
                   </Button>
                 )}
+
                 <Button
                   variant="contained"
                   onClick={handleNext}

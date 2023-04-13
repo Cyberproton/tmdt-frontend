@@ -14,7 +14,7 @@ import { GlobalStyle } from 'styles/global-styles';
 import { useTranslation } from 'react-i18next';
 import { NavBar } from './components/NavBar';
 import AppCart from './pages/CartPage/AppCart';
-import { Checkout } from './pages/CheckoutPage/Checkout';
+import  Checkout  from './pages/CheckoutPage/Checkout';
 import { DesignPage } from './pages/DesignPage';
 import { General } from './pages/General';
 import { HomePage } from './pages/HomePage';
