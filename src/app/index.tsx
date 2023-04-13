@@ -14,11 +14,12 @@ import { GlobalStyle } from 'styles/global-styles';
 import { useTranslation } from 'react-i18next';
 import { NavBar } from './components/NavBar';
 import { CartPage } from './pages/CartPage';
-import Checkout from './pages/CheckoutPage/Checkout';
+import { CheckoutPage } from './pages/CheckoutPage';
 import { DesignPage } from './pages/DesignPage';
 import { General } from './pages/General';
 import { HomePage } from './pages/HomePage';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
+import { PostCheckoutPage } from './pages/PostCheckoutPage';
 import { ProductDetailPage } from './pages/ProductDetailPage';
 import { ProductPage } from './pages/ProductPage';
 
@@ -40,7 +41,8 @@ export function App() {
         <Route path="/product/:id" element={<ProductDetailPage />} />
         <Route path="/design" element={<DesignPage />} />
         <Route path="/cart" element={<CartPage />} />
-        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/checkout/done" element={<PostCheckoutPage />} />
         <Route path="/general" element={<General value={0} />} />
         <Route path="/general/support" element={<General value={1} />} />
         <Route

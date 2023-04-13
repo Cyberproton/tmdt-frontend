@@ -1,8 +1,12 @@
+import { Close } from '@mui/icons-material';
 import {
+  Alert,
   Box,
   Button,
   Divider,
   Grid,
+  IconButton,
+  Snackbar,
   ThemeProvider,
   Typography,
   createTheme,
@@ -27,11 +31,50 @@ export const ProductMainSection = (props: ProductMainSectionProps) => {
   const [selectedSize, setSelectedSize] = useState<string | undefined>();
   const [selectedColor, setSelectColor] = useState<string | undefined>();
   const [selectedQuantity, setSelectQuantity] = useState<number>(1);
+  const [notificationOpened, setNotificationOpened] = useState<boolean>(false);
+
+  const closeNotification = (
+    event: React.SyntheticEvent | Event,
+    reason?: string,
+  ) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setNotificationOpened(false);
+  };
 
   return (
     <Box
       sx={{ border: 1, borderRadius: borderRadius, borderColor: 'lightgray' }}
     >
+      <Snackbar
+        open={notificationOpened}
+        autoHideDuration={3000}
+        onClose={closeNotification}
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+        sx={{ mt: 8 }}
+        action={
+          <IconButton
+            size="small"
+            aria-label="close"
+            color="inherit"
+            onClick={closeNotification}
+          >
+            <Close fontSize="small" />
+          </IconButton>
+        }
+      >
+        <Alert
+          onClose={closeNotification}
+          severity="success"
+          sx={{ width: '100%' }}
+        >
+          Thêm sản phẩm vào giỏ hàng thành công
+        </Alert>
+      </Snackbar>
       <Grid container height={height}>
         <Grid item xs={4}>
           <Box
@@ -94,6 +137,7 @@ export const ProductMainSection = (props: ProductMainSectionProps) => {
                     color: selectedColor || 'Vàng',
                     quantity: selectedQuantity,
                   });
+                  setNotificationOpened(true);
                 }}
               >
                 <Typography variant="subtitle1" fontWeight={'medium'}>

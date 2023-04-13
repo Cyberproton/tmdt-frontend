@@ -6,6 +6,7 @@ import {
   Typography,
   createTheme,
 } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import { CartOrderDetailsProps } from '../types';
 
 const primaryBlack = createTheme({
@@ -20,6 +21,9 @@ export const CartOrderDetails = (props: CartOrderDetailsProps) => {
     0,
   );
   const shippingFee = cartItems.length === 0 ? 0 : 30000;
+
+  const navigate = useNavigate();
+
   return (
     <Box
       p={4}
@@ -57,7 +61,11 @@ export const CartOrderDetails = (props: CartOrderDetailsProps) => {
         </Typography>
       </Box>
       <ThemeProvider theme={primaryBlack}>
-        <Button sx={{ mt: 2 }} variant="contained">
+        <Button
+          sx={{ mt: 2 }}
+          variant="contained"
+          onClick={() => navigate('/checkout', { state: { cartItems } })}
+        >
           Thanh toán đơn hàng
         </Button>
       </ThemeProvider>

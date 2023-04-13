@@ -20,8 +20,8 @@ export const CartItemGroup = (props: CartItemGroupProps) => {
           <Typography variant="h5">Giỏ hàng trống</Typography>
         </Box>
       ) : (
-        items.map(item => (
-          <Box my={1}>
+        items.map((item, index) => (
+          <Box my={1} key={index}>
             <CartItem
               cartItem={item}
               removeCartItem={() => removeCartItem(item)}
