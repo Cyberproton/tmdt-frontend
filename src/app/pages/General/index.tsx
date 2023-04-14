@@ -1,15 +1,14 @@
-import * as React from 'react';
-import { Helmet } from 'react-helmet-async';
-import { useNavigate } from 'react-router-dom';
-import { Card } from '@mui/material';
-import { Box, Container } from '@mui/material';
+import { Box, Card, Container } from '@mui/material';
 import Grid from '@mui/material/Grid';
-import Account from './Account';
-import { Support } from './Support';
-import { Policy } from './Policy';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
+import * as React from 'react';
+import { Helmet } from 'react-helmet-async';
+import { useNavigate } from 'react-router-dom';
+import Account from './Account';
+import { Policy } from './Policy';
+import { Support } from './Support';
 import { GeneralBreadcrumbs } from './components/GeneralBreadcrumbs ';
 
 export function General(props) {
@@ -34,10 +33,7 @@ export function General(props) {
     <>
       <Helmet>
         <title>Thông tin</title>
-        <meta
-          name="description"
-          content="A React Boilerplate application homepage"
-        />
+        <meta name="description" content="Davies Fashion" />
       </Helmet>
       <Container>
         <Box my={3}>

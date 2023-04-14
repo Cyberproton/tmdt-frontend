@@ -1,19 +1,15 @@
-import React from 'react';
-import Edit from './Edit';
-import './index.css';
 import { Box, Container } from '@mui/material';
 import { Helmet } from 'react-helmet-async';
+import Edit from './Edit';
 import { DesignBreadcrumbs } from './componens/DesignBreadcrumb';
+import './index.css';
 
 export function DesignPage() {
   return (
     <>
       <Helmet>
         <title>Thông tin</title>
-        <meta
-          name="description"
-          content="A React Boilerplate application homepage"
-        />
+        <meta name="description" content="Davies Fashion" />
       </Helmet>
       <Container>
         <Box my={3}>
