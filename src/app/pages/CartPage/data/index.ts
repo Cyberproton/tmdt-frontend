@@ -62,6 +62,22 @@ export const removeCartItem = (cartItem: CartItem): void => {
   setCartItems(cartItems);
 };
 
+export const removeCartItems = (cartItems: CartItem[]): void => {
+  const currentCartItems = getCartItems();
+  cartItems.forEach(cartItem => {
+    const index = currentCartItems.findIndex(
+      item =>
+        item.id === cartItem.id &&
+        item.size === cartItem.size &&
+        item.color === cartItem.color,
+    );
+    if (index !== -1) {
+      currentCartItems.splice(index, 1);
+    }
+  });
+  setCartItems(currentCartItems);
+};
+
 export const clearCartItems = (): void => {
   setCartItems([]);
 };

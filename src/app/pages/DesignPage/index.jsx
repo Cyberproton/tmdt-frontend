@@ -1,15 +1,15 @@
 import { Box, Container } from '@mui/material';
 import { Helmet } from 'react-helmet-async';
 import Edit from './Edit';
-import { DesignBreadcrumbs } from './componens/DesignBreadcrumb';
+import { DesignBreadcrumbs } from './components/DesignBreadcrumb';
 import './index.css';
 
 export function DesignPage() {
   return (
     <>
       <Helmet>
-        <title>Thông tin</title>
-        <meta name="description" content="Davies Fashion" />
+        <title>Design</title>
+        <meta name="description" content="Design Page for Davies Fashion" />
       </Helmet>
       <Container>
         <Box my={3}>

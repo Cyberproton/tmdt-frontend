@@ -7,6 +7,8 @@ import {
   IconButton,
   Toolbar,
 } from '@mui/material';
+import { CartItemsContext } from 'app/pages/CartPage/context';
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { NavigationButton, NavigationIconButton } from '../NavigationButton';
 import { DevisLogo } from './DevisLogo';
@@ -14,6 +16,8 @@ import { SearchBar } from './SearchBar';
 
 export function NavBar() {
   const navigate = useNavigate();
+  const cartItemsContext = useContext(CartItemsContext);
+  const count = cartItemsContext.cartItems.length;
 
   return (
     <AppBar position="static" color="transparent">
@@ -42,9 +46,16 @@ export function NavBar() {
             <NavigationButton path="/products">Sản phẩm</NavigationButton>
             <NavigationButton path="/design">Thiết kế áo</NavigationButton>
             <NavigationIconButton path="/cart">
-              <Badge badgeContent={4} color="error">
+              {count < 1 ? (
                 <ShoppingBagRounded fontSize="large" />
-              </Badge>
+              ) : (
+                <Badge
+                  badgeContent={cartItemsContext.cartItems.length}
+                  color="error"
+                >
+                  <ShoppingBagRounded fontSize="large" />
+                </Badge>
+              )}
             </NavigationIconButton>
             <NavigationIconButton path="/general">
               <PersonRounded fontSize="large" />

@@ -1,35 +1,16 @@
 import { Box, Container, Grid } from '@mui/material';
-import { useState } from 'react';
+import { useContext } from 'react';
 import { CartItemGroup, CartOrderDetails } from './components';
 import { CartBreadcrumbs } from './components/CartBreadcrumbs';
-import {
-  addCartItem,
-  clearCartItems,
-  getCartItems,
-  removeCartItem,
-  subtractCartItem,
-} from './data';
-import { CartItem } from './types';
+import { CartItemsContext } from './context';
 
 export const CartPage = props => {
-  const [items, setItems] = useState(getCartItems());
-
-  const removeItem = (item: CartItem) => {
-    removeCartItem(item);
-    setItems(getCartItems());
-  };
-  const addItem = (item: CartItem) => {
-    addCartItem(item);
-    setItems(getCartItems());
-  };
-  const subtractItem = (item: CartItem) => {
-    subtractCartItem(item);
-    setItems(getCartItems());
-  };
-  const clearItem = () => {
-    clearCartItems();
-    setItems([]);
-  };
+  const cartItemsContext = useContext(CartItemsContext);
+  const cartItems = cartItemsContext.cartItems;
+  const removeItem = cartItemsContext.removeCartItem;
+  const addItem = cartItemsContext.addCartItem;
+  const subtractItem = cartItemsContext.subtractCartItem;
+  const clearItem = cartItemsContext.clearCartItems;
 
   return (
     <Container>
@@ -40,7 +21,7 @@ export const CartPage = props => {
         <Grid container spacing={2}>
           <Grid item xs={8}>
             <CartItemGroup
-              cartItems={items}
+              cartItems={cartItems}
               removeCartItem={removeItem}
               addCartItem={addItem}
               subtractCartItem={subtractItem}
@@ -48,7 +29,7 @@ export const CartPage = props => {
             />
           </Grid>
           <Grid item xs={4}>
-            <CartOrderDetails cartItems={items} />
+            <CartOrderDetails cartItems={cartItems} />
           </Grid>
         </Grid>
       </Box>

@@ -11,9 +11,9 @@ import {
   Typography,
   createTheme,
 } from '@mui/material';
-import { addCartItem } from 'app/pages/CartPage/data';
+import { CartItemsContext } from 'app/pages/CartPage/context';
 import Image from 'mui-image';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { ProductMainSectionProps } from '../types';
 import { ProductMainSectionName } from './ProductMainSectionName';
 import { ProductMainSectionOptions } from './ProductMainSectionOptions';
@@ -28,6 +28,7 @@ export const ProductMainSection = (props: ProductMainSectionProps) => {
   const height = 460;
   const product = props.product;
 
+  const cartItemsContext = useContext(CartItemsContext);
   const [selectedSize, setSelectedSize] = useState<string | undefined>();
   const [selectedColor, setSelectColor] = useState<string | undefined>();
   const [selectedQuantity, setSelectQuantity] = useState<number>(1);
@@ -131,7 +132,7 @@ export const ProductMainSection = (props: ProductMainSectionProps) => {
               <Button
                 variant="contained"
                 onClick={() => {
-                  addCartItem({
+                  cartItemsContext.addCartItem({
                     ...product,
                     size: selectedSize || 'M',
                     color: selectedColor || 'Vàng',

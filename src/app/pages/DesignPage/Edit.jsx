@@ -1,8 +1,7 @@
 import React from 'react';
-import Designer from './componens/designer';
-import Editor from './componens/editor';
-import { tshirts } from './componens/tshirtcolor';
-import ColoredRect from './componens/Tool.js';
+import Designer from './components/designer';
+import Editor from './components/editor';
+import { tshirts } from './components/tshirtcolor';
 
 const initial = {
   direction: 'front',
