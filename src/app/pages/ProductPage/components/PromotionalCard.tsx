@@ -50,10 +50,8 @@ export const PromotionalCard = props => {
                 </Box>
 
                 <Typography color={'dimgray'}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                  Nhanh tay sở hữu những sản phẩm chất cùng với chương trình
+                  khuyến mãi sốc lên đến 90% tháng 4 này.
                 </Typography>
               </Box>
               <Box my={1}>

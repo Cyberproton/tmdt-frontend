@@ -1,10 +1,8 @@
-import * as React from 'react';
-import styled from 'styled-components/macro';
-import { P } from './P';
 import { Link } from 'app/components/Link';
-import { NavBar } from 'app/components/NavBar';
 import { Helmet } from 'react-helmet-async';
+import styled from 'styled-components/macro';
 import { StyleConstants } from 'styles/StyleConstants';
+import { P } from './P';
 
 export function NotFoundPage() {
   return (
@@ -13,7 +11,6 @@ export function NotFoundPage() {
         <title>404 Page Not Found</title>
         <meta name="description" content="Page not found" />
       </Helmet>
-      <NavBar />
       <Wrapper>
         <Title>
           4
